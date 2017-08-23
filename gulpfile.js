@@ -40,10 +40,10 @@ gulp.task('clean', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(options.public + 'js/*.js',   ['scripts']);
-  gulp.watch(options.public + 'css/*.css', ['styles']);
-  gulp.watch(options.public + 'images/*',  ['images']);
-  gulp.watch(options.public + '*.html',    ['html']);
+  gulp.watch(options.src + 'scripts/*.js',   ['scripts']);
+  gulp.watch(options.src + 'styles/*.scss', ['styles']);
+  gulp.watch(options.src + 'images/*',  ['images']);
+  gulp.watch(options.src + '*.html',    ['html']);
 });
 
 gulp.task('build', ['clean', 'scripts', 'styles', 'images', 'html']);
