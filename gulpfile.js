@@ -1,6 +1,7 @@
 var fs   = require('fs');
 var gulp = require('gulp');
 var del  = require('del');
+var sass = require('gulp-sass');
 
 var options = {
     src   : './src/',
@@ -16,6 +17,7 @@ gulp.task('scripts', function() {
 gulp.task('styles', function() {
   return gulp
           .src(options.src + 'styles/*.scss')
+          .pipe(sass())
           .pipe(gulp.dest(options.public + 'styles'));
 });
 
