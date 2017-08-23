@@ -9,14 +9,23 @@ var options = {
 }
 
 gulp.task('scripts', function() {
+  var files = [
+    './node_modules/jquery/dist/jquery.min.js',
+    './node_modules/bootstrap/dist/js/bootstrap.min.js',
+    options.src + 'scripts/*.js'
+  ];
   return gulp
-          .src(options.src + 'scripts/*.js')
+          .src(files)
           .pipe(gulp.dest(options.public + 'scripts'));
 });
 
 gulp.task('styles', function() {
+  var files = [
+    './node_modules/bootstrap/dist/css/bootstrap.min.css',
+    options.src + 'styles/*.scss'
+  ];
   return gulp
-          .src(options.src + 'styles/*.scss')
+          .src(files)
           .pipe(sass())
           .pipe(gulp.dest(options.public + 'styles'));
 });
